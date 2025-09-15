@@ -7,7 +7,7 @@ Id INT PRIMARY KEY IDENTITY(1,1),
 Surname NVARCHAR(25) DEFAULT 'xxx',
 FinCode CHAR(9) NOT NULL UNIQUE,
 Age INT CHECK (Age>=10) NOT NULL,
-AvgPoint DECIMAL CHECK(AvgPoint>=0 AND AvgPoint<=100) NOT NULL
+AvgPoint DECIMAL(5,2) CHECK(AvgPoint>=0 AND AvgPoint<=100) NOT NULL
 )
 Truncate Table Students
 INSERT INTO Students ([Name], Surname, FinCode, Age, AvgPoint)
@@ -27,3 +27,4 @@ UPDATE Students SET AvgPoint=100 WHERE AvgPoint=99
 SELECT * FROM Students WHERE AvgPoint>51 AND AvgPoint<90
 
 SELECT * FROM Students WHERE [Name] LIKE 'A%f'
+
